@@ -59,11 +59,13 @@ const toggle = document.getElementById('menuToggle');
 
 function cerrarMenu() {
   menu.classList.remove('is-open');
+  document.body.classList.remove('menu-abierto');
   toggle.setAttribute('aria-expanded', 'false');
   lenis?.start();
 }
 toggle.addEventListener('click', () => {
   const abierto = menu.classList.toggle('is-open');
+  document.body.classList.toggle('menu-abierto', abierto);
   toggle.setAttribute('aria-expanded', String(abierto));
   abierto ? lenis?.stop() : lenis?.start();
 });
@@ -74,7 +76,8 @@ if (hayGsap && !quieto) {
   gsap.timeline({ delay: 0.15 })
     .from('.inicio__titulo .line > span', { yPercent: 110, duration: 1.1, ease: 'expo.out', stagger: 0.12 })
     .from('.inicio__lead, .inicio__acciones, .inicio__badge, .inicio__baja', { y: 24, opacity: 0, duration: 0.8, ease: 'power3.out', stagger: 0.08 }, '-=0.6')
-    .from('.nav', { y: -30, opacity: 0, duration: 0.8, ease: 'power3.out' }, 0.4);
+    // Solo opacidad: una transformación en .nav encerraría al menú fijo dentro de la barra.
+    .from('.nav', { opacity: 0, duration: 0.8, ease: 'power2.out', clearProps: 'opacity' }, 0.4);
 }
 
 /* ---------- Director: la pose de la llanta sigue a lo que está a media pantalla ---------- */
@@ -172,7 +175,7 @@ const visorImg = document.getElementById('visorImg');
 document.querySelectorAll('.promo__ver').forEach((btn) => {
   btn.addEventListener('click', () => {
     const img = btn.querySelector('img');
-    visorImg.src = img.src;
+    visorImg.src = img.dataset.grande || img.src;
     visorImg.alt = img.alt;
     visor.showModal();
     lenis?.stop();

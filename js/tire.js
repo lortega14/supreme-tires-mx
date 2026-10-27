@@ -40,7 +40,9 @@ function iniciar() {
     canvas.remove();
     return;
   }
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+  // Resolución: tope más bajo en celular; baja sola si el equipo no alcanza 60 cuadros.
+  let resolucion = Math.min(window.devicePixelRatio, esCelular() ? 1.25 : 1.5);
+  renderer.setPixelRatio(resolucion);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
 
@@ -298,8 +300,22 @@ function iniciar() {
   let previoX = null;
   const reloj = new THREE.Clock();
 
+  let cuadros = 0, acumulado = 0, limpio = false;
+
   renderer.setAnimationLoop(() => {
-    const dt = Math.min(reloj.getDelta(), 0.05);
+    const dtReal = reloj.getDelta();
+    const dt = Math.min(dtReal, 0.05);
+
+    // Si los cuadros tardan de más, bajar la resolución un paso.
+    cuadros++; acumulado += dtReal;
+    if (cuadros === 90) {
+      if (acumulado / cuadros > 0.024 && resolucion > 0.85) {
+        resolucion = Math.max(resolucion - 0.25, 0.75);
+        renderer.setPixelRatio(resolucion);
+        renderer.setSize(window.innerWidth, window.innerHeight, false);
+      }
+      cuadros = 0; acumulado = 0;
+    }
     const t = quieto ? 0 : reloj.elapsedTime;
 
     if (anclaEl) {
@@ -346,6 +362,10 @@ function iniciar() {
     nube.rotation.y += dt * 0.5;
     llantaGrupo.scale.setScalar(1 + 0.025 * actual.nitro * Math.sin(t * 2.4));
 
+    // Fuera de pantalla y ya quieta: un último cuadro vacío y dejar de dibujar.
+    const fuera = Math.abs(actual.x) > 1.6 && Math.abs(meta.x - actual.x) < 0.01;
+    if (fuera && limpio) return;
+    limpio = fuera;
     renderer.render(scene, camera);
   });
 }
