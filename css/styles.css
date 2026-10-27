@@ -150,8 +150,9 @@ main, .pie { position: relative; z-index: 2; }
 /* 1. Inicio */
 .inicio { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: 7rem; position: relative; }
 .inicio__copy { max-width: 46rem; }
-.inicio__titulo { font-size: clamp(3.2rem, 11vw, 10rem); line-height: .82; letter-spacing: -.005em; }
-.inicio__titulo .line { display: block; overflow: hidden; padding: .14em 0 .04em; margin-top: -.14em; }
+.inicio__titulo { font-size: clamp(3.2rem, 9.5vw, 9rem); line-height: .82; letter-spacing: -.005em; }
+/* Recorte solo vertical (para la entrada de abajo hacia arriba): a los lados el texto nunca se corta */
+.inicio__titulo .line { display: block; clip-path: inset(0 -50vw); padding: .14em 0 .04em; margin-top: -.14em; white-space: nowrap; }
 .inicio__titulo .line > span { display: block; }
 .inicio__titulo .line:last-child { color: var(--naranja); }
 .inicio__lead { margin-top: 1.6rem; max-width: 31rem; font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: var(--tenue); }

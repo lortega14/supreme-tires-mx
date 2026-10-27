@@ -18,7 +18,7 @@ const AZUL = 0x0C09A3;
 // resorte: suspensión visible. nitro: partículas de nitrógeno. vaiven: alineación.
 const BASE = { x: 0, y: 0, size: 0.7, ry: -0.5, rx: 0.12, explode: 0, glow: 0, resorte: 0, nitro: 0, vaiven: 0 };
 const POSES = {
-  inicio:     { d: { x: 0.38, y: -0.02, size: 0.78, ry: -0.62 },                       m: { x: 0.12, y: -0.5, size: 0.95, ry: -0.55 } },
+  inicio:     { d: { x: 0.44, y: -0.02, size: 0.76, ry: -0.62 },                       m: { x: 0.12, y: -0.5, size: 0.95, ry: -0.55 } },
   promos:     { d: { x: 0.86, y: -0.72, size: 0.42, ry: -0.9 },                       m: { x: 0.82, y: -0.9, size: 0.55, ry: -0.9 } },
   general:    { d: { x: -0.45, y: 0, size: 0.82, ry: -0.4 },                          m: { x: 0, y: 0.45, size: 0.85, ry: -0.4 } },
   alineacion: { d: { x: -0.45, y: 0, size: 0.82, ry: -0.06, rx: 0.04, vaiven: 1 },    m: { x: 0, y: 0.45, size: 0.85, ry: -0.06, vaiven: 1 } },
