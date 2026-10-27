@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supreme Tires MX · Llantas y servicio automotriz en San Luis Potosí</title>
+  <meta name="description" content="Llantas para auto, camioneta, moto, camión y agrícola, con servicio automotriz. 25 años en San Luis Potosí y Ciudad Valles. Distribuidores autorizados Goodyear y Hifly.">
+  <meta name="theme-color" content="#03022E">
+  <link rel="icon" href="https://supremetiresmx.com/wp-content/uploads/2024/12/logo-Supreme-1.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <!-- Fondo y llanta: fijos detrás de todo el contenido -->
+  <div class="fondo" aria-hidden="true"></div>
+  <canvas class="escena" id="escena" aria-hidden="true"></canvas>
+
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#inicio" aria-label="Supreme Tires MX, inicio">
+      <img src="https://supremetiresmx.com/wp-content/uploads/2024/12/logo-Supreme-1.png" alt="Supreme Tires MX" width="117" height="67">
+    </a>
+    <nav class="nav__links" id="menu" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#sucursales">Sucursales</a>
+      <a class="btn btn--naranja nav__cta" href="#cotizar">Cotizar</a>
+    </nav>
+    <button class="nav__toggle" id="menuToggle" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+      <span class="sr">Abrir menú</span>
+    </button>
+  </header>
+
+  <!-- Recorrido: en qué capítulo vas -->
+  <nav class="riel" aria-label="Recorrido de la página">
+    <ol>
+      <li><a href="#inicio" data-cap="inicio"><span>Inicio</span></a></li>
+      <li><a href="#promociones" data-cap="promociones"><span>Promociones</span></a></li>
+      <li><a href="#servicios" data-cap="servicios"><span>Servicios</span></a></li>
+      <li><a href="#marcas" data-cap="marcas"><span>Marcas</span></a></li>
+      <li><a href="#nosotros" data-cap="nosotros"><span>Nosotros</span></a></li>
+      <li><a href="#sucursales" data-cap="sucursales"><span>Sucursales</span></a></li>
+      <li><a href="#cotizar" data-cap="cotizar"><span>Cotiza</span></a></li>
+    </ol>
+  </nav>
+
+  <main id="contenido">
+
+    <!-- ============ 1. INICIO ============ -->
+    <section class="cap inicio" id="inicio" data-pose="inicio">
+      <div class="inicio__copy">
+        <h1 class="inicio__titulo">
+          <span class="line"><span>Supremacía</span></span>
+          <span class="line"><span>en llantas</span></span>
+        </h1>
+        <p class="inicio__lead">Llantas para auto, camioneta, moto, camión y agrícola, con servicio automotriz completo. 25 años rodando en San Luis Potosí.</p>
+        <div class="inicio__acciones">
+          <a class="btn btn--naranja" href="#cotizar">Cotizar mis llantas</a>
+          <a class="btn btn--linea" href="#promociones">Ver promociones</a>
+        </div>
+        <p class="inicio__badge">Distribuidores autorizados de Goodyear y Hifly</p>
+      </div>
+      <a class="inicio__baja" href="#promociones">
+        <span>Desliza y la llanta te lleva</span>
+        <i aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- ============ 2. PROMOCIONES ============ -->
+    <section class="cap promos" id="promociones" data-pose="promos" aria-labelledby="promos-t">
+      <header class="cap__head">
+        <h2 id="promos-t">Promociones</h2>
+        <p>Toca un cartel para verlo completo con precios y condiciones.</p>
+      </header>
+      <div class="promos__lista">
+        <article class="promo">
+          <button class="promo__ver" type="button" aria-label="Ver cartel completo: Más caminos con Goodyear">
+            <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-17-at-10.07.13-AM-1.jpeg" alt="Promoción Goodyear: tarjeta de gasolina de hasta 800 pesos" loading="lazy" width="1600" height="1600">
+          </button>
+          <h3>Más caminos con Goodyear</h3>
+          <p>Llévate una tarjeta de hasta $800 pesos de gasolina en la compra de tu set de 4 llantas Goodyear o Cooper.</p>
+        </article>
+        <article class="promo">
+          <button class="promo__ver" type="button" aria-label="Ver cartel completo: Gran liquidación de llantas">
+            <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-07-at-11.56.26-AM-3.jpeg" alt="Gran liquidación de llantas Sumitomo con precios desde 1,189 pesos" loading="lazy" width="1080" height="1080">
+          </button>
+          <h3>Gran liquidación de llantas</h3>
+          <p>¡Últimas llantas en marca Sumitomo! Excelentes precios desde 1 pieza con servicio incluido y hasta 9 MSI.</p>
+        </article>
+        <article class="promo">
+          <button class="promo__ver" type="button" aria-label="Ver cartel completo: Paga 2 y llévate los 4">
+            <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/JETTA-4TA-98-15.jpg" alt="Promoción amortiguadores AG: paga 2 y llévate 4" loading="lazy" width="1080" height="1080">
+          </button>
+          <h3>Paga 2 y llévate los 4</h3>
+          <p>Aprovecha nuestra promoción en amortiguadores AG. Paga solo 2 y llévate los 4 con bases e instalación incluidas. <small>*Consulta los modelos participantes.</small></p>
+        </article>
+      </div>
+    </section>
+
+    <dialog class="visor" id="visor">
+      <img id="visorImg" alt="">
+      <form method="dialog"><button class="visor__cerrar" aria-label="Cerrar">×</button></form>
+    </dialog>
+
+    <!-- ============ 3. SERVICIOS ============ -->
+    <section class="cap servicios" id="servicios" aria-labelledby="servicios-t">
+      <header class="cap__head servicios__head" data-pose="general">
+        <h2 id="servicios-t">Servicios</h2>
+        <p>Para auto, camioneta y camión. Sigue bajando: la llanta te muestra en qué parte trabajamos.</p>
+      </header>
+
+      <ol class="servicios__lista">
+        <li class="tarjeta" data-pose="alineacion">
+          <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/ALI-Y-BAL.jpg" alt="" loading="lazy">
+          <h3>Alineación y balanceo <span class="precio">$580</span></h3>
+          <p>Mantén tu vehículo estable, seguro y con un manejo suave. La alineación corrige los ángulos de las ruedas para evitar el desgaste irregular de las llantas, mientras que el balanceo reduce las vibraciones al conducir.</p>
+          <a class="tarjeta__cta" href="#cotizar" data-servicio="Alineación y balanceo">Agendar cita</a>
+        </li>
+        <li class="tarjeta" data-pose="frenos">
+          <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/FRENOS-2.jpg" alt="" loading="lazy">
+          <h3>Frenos</h3>
+          <p>Conduce con mayor seguridad y confianza con un sistema de frenado en óptimas condiciones. Revisamos los componentes de frenos para detectar desgaste y ayudar a garantizar una respuesta eficiente al frenar.</p>
+          <a class="tarjeta__cta" href="#cotizar" data-servicio="Frenos">Agendar cita</a>
+        </li>
+        <li class="tarjeta" data-pose="suspension">
+          <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/AMORTIGUADORES.jpg" alt="" loading="lazy">
+          <h3>Amortiguadores</h3>
+          <p>Mejora la estabilidad, el control y la comodidad de tu vehículo. Revisamos el estado de tus amortiguadores para ayudarte a mantener una conducción segura, reducir las vibraciones y el desgaste de tus llantas.</p>
+          <a class="tarjeta__cta" href="#cotizar" data-servicio="Amortiguadores">Agendar cita</a>
+        </li>
+        <li class="tarjeta" data-pose="suspension">
+          <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/SUSPENSION.jpg" alt="" loading="lazy">
+          <h3>Suspensión</h3>
+          <p>Mejora la estabilidad, el control y la comodidad de tu vehículo en cada recorrido. Revisamos los componentes de la suspensión para detectar desgastes y ayudar a mantener un manejo seguro y confortable.</p>
+          <a class="tarjeta__cta" href="#cotizar" data-servicio="Suspensión">Agendar cita</a>
+        </li>
+        <li class="tarjeta" data-pose="nitro">
+          <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/NITROGENO.jpg" alt="" loading="lazy">
+          <h3>Nitrógeno</h3>
+          <p>Mantén tus llantas con la presión adecuada y disfruta de un manejo más estable. El inflado con nitrógeno ayuda a reducir la pérdida de presión y favorece un desgaste más uniforme de las llantas.</p>
+          <a class="tarjeta__cta" href="#cotizar" data-servicio="Nitrógeno">Agendar cita</a>
+        </li>
+        <li class="tarjeta" data-pose="general">
+          <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/CAMBIO-DE-ACEITE.jpg" alt="" loading="lazy">
+          <h3>Cambio de aceite</h3>
+          <p>Mantén tu motor protegido y funcionando de manera óptima. Realizamos el cambio de aceite para reducir la fricción, prevenir el desgaste de las piezas y favorecer el buen rendimiento de tu vehículo.</p>
+          <a class="tarjeta__cta" href="#cotizar" data-servicio="Cambio de aceite">Agendar cita</a>
+        </li>
+        <li class="tarjeta" data-pose="general">
+          <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/MANTENIMIENTO-MAYOR.jpg" alt="" loading="lazy">
+          <h3>Afinación y mantenimiento mayor</h3>
+          <p>Mantén tu vehículo en óptimas condiciones con un servicio integral que ayuda a prevenir fallas, mejorar el rendimiento del motor y prolongar su vida útil.</p>
+          <a class="tarjeta__cta" href="#cotizar" data-servicio="Afinación y mantenimiento mayor">Agendar cita</a>
+        </li>
+        <li class="tarjeta" data-pose="general">
+          <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/REVISION.jpg" alt="" loading="lazy">
+          <h3>Revisión general</h3>
+          <p>¡Rueda con mayor seguridad y confianza en tu camino! Revisamos los principales componentes de tu vehículo para identificar posibles fallas, detectar desgastes y ayudarte a mantenerlo en óptimas condiciones.</p>
+          <a class="tarjeta__cta" href="#cotizar" data-servicio="Revisión general">Agendar cita</a>
+        </li>
+        <li class="tarjeta" data-pose="general">
+          <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/BATERIAS.jpg" alt="" loading="lazy">
+          <h3>Baterías</h3>
+          <p>Revisamos el estado de tu batería para detectar posibles fallas y ayudarte a mantener un funcionamiento confiable. Te asesoramos para encontrar la batería ideal para tu auto y nada detenga tu camino.</p>
+          <a class="tarjeta__cta" href="#cotizar" data-servicio="Baterías">Agendar cita</a>
+        </li>
+      </ol>
+      <p class="servicios__nota">El precio de los servicios sin tarifa publicada depende del diagnóstico de tu vehículo.</p>
+    </section>
+
+    <!-- ============ 4. MARCAS ============ -->
+    <section class="cap marcas" id="marcas" data-pose="marcas" aria-labelledby="marcas-t">
+      <header class="cap__head marcas__head">
+        <h2 id="marcas-t">20 marcas, una llanta para cada camino</h2>
+        <p>Las mejores marcas del mercado en neumáticos para automóvil, motocicleta, camión y agrícola. Mira el costado de la llanta mientras bajas.</p>
+      </header>
+      <ul class="marcas__grid" id="marcasGrid">
+        <li data-marca="GOODYEAR"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/GOODYEAR-400x284.jpg" alt="Goodyear" loading="lazy"></li>
+        <li data-marca="HIFLY"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/HIFLY-400x284.jpg" alt="Hifly" loading="lazy"></li>
+        <li data-marca="ARMSTRONG"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/ARMSTRONG-400x284.jpg" alt="Armstrong" loading="lazy"></li>
+        <li data-marca="BRIDGESTONE"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/BRIDGESTONE-400x284.jpg" alt="Bridgestone" loading="lazy"></li>
+        <li data-marca="FIRESTONE"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/FIRESTONE-400x284.jpg" alt="Firestone" loading="lazy"></li>
+        <li data-marca="CONTINENTAL"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/CONTINENTAL-400x284.jpg" alt="Continental" loading="lazy"></li>
+        <li data-marca="COOPER"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/COOPER-400x284.jpg" alt="Cooper" loading="lazy"></li>
+        <li data-marca="DUNLOP"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/DUNLOP-400x284.jpg" alt="Dunlop" loading="lazy"></li>
+        <li data-marca="KUMHO"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/KUMHO-400x284.jpg" alt="Kumho" loading="lazy"></li>
+        <li data-marca="KELLY"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/KELLY-400x284.jpg" alt="Kelly" loading="lazy"></li>
+        <li data-marca="HANKOOK"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/HANKOOK-400x284.jpg" alt="Hankook" loading="lazy"></li>
+        <li data-marca="PIRELLI"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/PIRELLI-400x284.jpg" alt="Pirelli" loading="lazy"></li>
+        <li data-marca="EUZKADI"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/EUZKADI-400x284.jpg" alt="Euzkadi" loading="lazy"></li>
+        <li data-marca="VENOM"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/VENOM-400x284.jpg" alt="Venom" loading="lazy"></li>
+        <li data-marca="BFGOODRICH"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/BFGOODRICH-400x284.jpg" alt="BFGoodrich" loading="lazy"></li>
+        <li data-marca="ONYX"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/ONYX-400x284.jpg" alt="Onyx" loading="lazy"></li>
+        <li data-marca="TORQUE"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/TORQUE-400x284.jpg" alt="Torque" loading="lazy"></li>
+        <li data-marca="SUMAXX"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/SUMAXX-400x284.jpg" alt="Sumaxx" loading="lazy"></li>
+        <li data-marca="FIREMAX"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/FIREMAX-400x284.jpg" alt="Firemax" loading="lazy"></li>
+        <li data-marca="MILEKING"><img src="https://supremetiresmx.com/wp-content/uploads/2026/10/MILEKING-400x284.jpg" alt="Mileking" loading="lazy"></li>
+      </ul>
+    </section>
+
+    <!-- ============ 5. NOSOTROS ============ -->
+    <section class="cap nosotros" id="nosotros" data-pose="nosotros" aria-labelledby="nosotros-t">
+      <h2 id="nosotros-t" class="nosotros__titulo"><span data-cuenta="25">25</span> años en el camino</h2>
+      <div class="nosotros__texto">
+        <p>Somos una empresa llantera que durante sus 25 años de experiencia busca satisfacer las necesidades de sus consumidores. Ofrecemos los mejores servicios automotrices y las mejores marcas del mercado en neumáticos para automóvil, motocicleta, camión y agrícola.</p>
+        <p>Contamos con sucursales en el área metropolitana de San Luis Potosí y en Ciudad Valles, y somos distribuidores autorizados de Goodyear y Hifly.</p>
+      </div>
+
+      <ul class="cifras" aria-label="Supreme Tires en cifras">
+        <li><strong data-cuenta="5">5</strong> sucursales</li>
+        <li><strong data-cuenta="20">20</strong> marcas de llantas</li>
+        <li><strong data-cuenta="9">9</strong> meses sin intereses en promociones</li>
+      </ul>
+
+      <dl class="pilares">
+        <div>
+          <dt>Asesorías</dt>
+          <dd>Prestamos servicios automotrices como asesoramiento para revisión técnica vehicular y mecánica automotriz, con un servicio personalizado que busca satisfacer las necesidades de cada cliente.</dd>
+        </div>
+        <div>
+          <dt>Misión</dt>
+          <dd>Ofrecer solución en llantas y servicios complementarios dentro de los segmentos auto, camioneta, moto, camión, llanta agrícola, entre otros, buscando la plena satisfacción de nuestros clientes mediante el esfuerzo y constancia de nuestro grupo de profesionales.</dd>
+        </div>
+        <div>
+          <dt>Visión</dt>
+          <dd>Contar con el gusto y preferencia de nuestros clientes, mediante la búsqueda constante de mejores productos a precios competitivos, siempre manteniendo un trato respetuoso y honesto de nuestro grupo de profesionales.</dd>
+        </div>
+      </dl>
+
+      <ul class="valores" aria-label="Valores">
+        <li>Profesionalismo</li>
+        <li>Honestidad</li>
+        <li>Confianza</li>
+        <li>Trabajo en equipo</li>
+        <li>Liderazgo</li>
+      </ul>
+    </section>
+
+    <!-- ============ 6. SUCURSALES ============ -->
+    <section class="cap sucursales" id="sucursales" aria-labelledby="sucursales-t">
+      <header class="cap__head">
+        <h2 id="sucursales-t">5 sucursales, una ruta</h2>
+        <p>Baja y la llanta te lleva de una sucursal a otra, de San Luis Potosí a Ciudad Valles.</p>
+      </header>
+
+      <div class="ruta">
+        <div class="ruta__fija"><div class="ruta__pegado">
+        <div class="ruta__mapa" aria-hidden="true">
+          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <radialGradient id="zona" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#1A17B8" stop-opacity=".55"/>
+                <stop offset="1" stop-color="#1A17B8" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="180" cy="210" r="140" fill="url(#zona)"/>
+            <circle cx="510" cy="265" r="75" fill="url(#zona)"/>
+            <path class="ruta__camino" d="M175 115 C 210 160, 205 185, 195 205 S 140 235, 140 255 S 190 300, 215 290 S 330 230, 420 250 S 490 268, 510 265"/>
+            <text x="70" y="62" class="ruta__ciudad">San Luis Potosí</text>
+            <text x="440" y="200" class="ruta__ciudad">Ciudad Valles</text>
+            <text x="330" y="222" class="ruta__nota">rumbo a la Huasteca</text>
+          </svg>
+          <button class="pin" id="pin-1" style="left:29.2%;top:28.75%" data-ir="suc-1" tabindex="-1"><span>Acceso Norte</span></button>
+          <button class="pin" id="pin-0" style="left:32.5%;top:51.25%" data-ir="suc-0" tabindex="-1"><span>Las Vías</span></button>
+          <button class="pin" id="pin-2" style="left:23.3%;top:63.75%" data-ir="suc-2" tabindex="-1"><span>Muñoz</span></button>
+          <button class="pin" id="pin-4" style="left:35.8%;top:72.5%" data-ir="suc-4" tabindex="-1"><span>Constitución</span></button>
+          <button class="pin" id="pin-3" style="left:85%;top:66.25%" data-ir="suc-3" tabindex="-1"><span>Cd. Valles</span></button>
+        </div>
+        <p class="ruta__aviso">Mapa ilustrativo. Usa «Cómo llegar» para la ubicación exacta.</p>
+        </div></div>
+
+        <ol class="sucs">
+          <li class="suc" id="suc-1" data-pose="sucursal" data-ancla="#pin-1" data-tel="444 130 4500">
+            <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/Foto-Acceso-Norte-scaled.jpg" alt="Fachada de Supreme Tires Acceso Norte" loading="lazy">
+            <h3>Acceso Norte</h3>
+            <p>Carr. A Matehuala Km. 4.26, Col. Industrial Mexicana, 78309, San Luis Potosí, S.L.P.</p>
+            <a class="suc__tel" href="tel:+524441304500">444 130 4500</a>
+            <div class="suc__acciones">
+              <a class="btn btn--naranja" href="tel:+524441304500">Llamar</a>
+              <a class="btn btn--linea" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Supreme%20Tires%20Acceso%20Norte%2C%20Carr.%20A%20Matehuala%20Km.%204.26%2C%20Col.%20Industrial%20Mexicana%2C%2078309%2C%20San%20Luis%20Potos%C3%AD%2C%20S.L.P.">Cómo llegar</a>
+            </div>
+          </li>
+          <li class="suc" id="suc-0" data-pose="sucursal" data-ancla="#pin-0" data-tel="444 411 3800">
+            <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/Foto-Vias-scaled.jpg" alt="Fachada de Supreme Tires Las Vías" loading="lazy">
+            <h3>Las Vías</h3>
+            <p>Av. Hernán Cortés 1005, Mineros Fannayer, 78170, San Luis Potosí, S.L.P.</p>
+            <a class="suc__tel" href="tel:+524444113800">444 411 3800</a>
+            <div class="suc__acciones">
+              <a class="btn btn--naranja" href="tel:+524444113800">Llamar</a>
+              <a class="btn btn--linea" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Supreme%20Tires%20Las%20V%C3%ADas%2C%20Av.%20Hern%C3%A1n%20Cort%C3%A9s%201005%2C%20Mineros%20Fannayer%2C%2078170%2C%20San%20Luis%20Potos%C3%AD%2C%20S.L.P.">Cómo llegar</a>
+            </div>
+          </li>
+          <li class="suc" id="suc-2" data-pose="sucursal" data-ancla="#pin-2" data-tel="444 188 5471">
+            <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/Foto-Munoz-scaled.jpg" alt="Fachada de Supreme Tires Muñoz" loading="lazy">
+            <h3>Muñoz</h3>
+            <p>Av. Prol. Muñoz 343, Manuel J. Othon, 78175, San Luis Potosí, S.L.P.</p>
+            <a class="suc__tel" href="tel:+524441885471">444 188 5471</a>
+            <div class="suc__acciones">
+              <a class="btn btn--naranja" href="tel:+524441885471">Llamar</a>
+              <a class="btn btn--linea" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Supreme%20Tires%20Mu%C3%B1oz%2C%20Av.%20Prol.%20Mu%C3%B1oz%20343%2C%20Manuel%20J.%20Othon%2C%2078175%2C%20San%20Luis%20Potos%C3%AD%2C%20S.L.P.">Cómo llegar</a>
+            </div>
+          </li>
+          <li class="suc" id="suc-4" data-pose="sucursal" data-ancla="#pin-4" data-tel="444 122 5321">
+            <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/Foto-Constitucion-scaled.jpg" alt="Fachada de Supreme Tires Constitución" loading="lazy">
+            <h3>Constitución</h3>
+            <p>Av. Constitución 2825, Colorines, 78389, San Luis Potosí, S.L.P.</p>
+            <a class="suc__tel" href="tel:+524441225321">444 122 5321</a>
+            <div class="suc__acciones">
+              <a class="btn btn--naranja" href="tel:+524441225321">Llamar</a>
+              <a class="btn btn--linea" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Supreme%20Tires%20Constituci%C3%B3n%2C%20Av.%20Constituci%C3%B3n%202825%2C%20Colorines%2C%2078389%2C%20San%20Luis%20Potos%C3%AD%2C%20S.L.P.">Cómo llegar</a>
+            </div>
+          </li>
+          <li class="suc" id="suc-3" data-pose="sucursal" data-ancla="#pin-3" data-tel="481 113 0286">
+            <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/Foto-Valles-scaled.jpg" alt="Fachada de Supreme Tires Cd. Valles" loading="lazy">
+            <h3>Cd. Valles</h3>
+            <p>Blvd. México Laredo Sur 49, Zona Centro, 79000, Ciudad Valles, S.L.P.</p>
+            <a class="suc__tel" href="tel:+524811130286">481 113 0286</a>
+            <div class="suc__acciones">
+              <a class="btn btn--naranja" href="tel:+524811130286">Llamar</a>
+              <a class="btn btn--linea" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Supreme%20Tires%20Cd.%20Valles%2C%20Blvd.%20M%C3%A9xico%20Laredo%20Sur%2049%2C%20Zona%20Centro%2C%2079000%2C%20Ciudad%20Valles%2C%20S.L.P.">Cómo llegar</a>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 7. COTIZA ============ -->
+    <section class="cap cotizar" id="cotizar" data-pose="cotiza" aria-labelledby="cotizar-t">
+      <div class="cotizar__caja">
+        <h2 id="cotizar-t">Cotiza tus llantas</h2>
+        <p class="cotizar__lead">Elige tu medida y la verás en el costado de la llanta. Te contactamos con precio y disponibilidad en tu sucursal.</p>
+
+        <form class="form" id="formCotizar" novalidate>
+          <ol class="pasos" aria-label="Pasos de la cotización">
+            <li class="is-actual" aria-current="step"><span>1</span>Tu vehículo</li>
+            <li><span>2</span>Tus datos</li>
+          </ol>
+
+          <fieldset class="paso" data-paso="1">
+            <legend class="sr">Paso 1: tu vehículo</legend>
+            <div class="campo campo--ancho">
+              <label for="f-auto">Modelo y año del auto</label>
+              <input id="f-auto" name="auto" placeholder="Jetta 2015" required>
+            </div>
+            <fieldset class="campo campo--ancho medida" id="medidaSel">
+              <legend>Medida de llanta <span class="opcional">(viene en el costado de tu llanta)</span></legend>
+              <div class="medida__campos">
+                <label><span>Ancho</span><select id="b-ancho"></select></label>
+                <span class="medida__sep" aria-hidden="true">/</span>
+                <label><span>Perfil</span><select id="b-perfil"></select></label>
+                <span class="medida__sep" aria-hidden="true">R</span>
+                <label><span>Rin</span><select id="b-rin"></select></label>
+              </div>
+              <label class="medida__otra"><input type="checkbox" id="b-otra"> Tengo otra medida o no la sé</label>
+              <input id="f-medida-otra" name="medidaOtra" placeholder="Ej. 11R22.5, o déjalo vacío si no la sabes" hidden>
+            </fieldset>
+            <div class="campo">
+              <label for="f-servicio">Servicio</label>
+              <select id="f-servicio" name="servicio">
+                <option value="Solo llantas">Solo llantas</option>
+                <option>Alineación y balanceo</option>
+                <option>Amortiguadores</option>
+                <option>Cambio de aceite</option>
+                <option>Afinación y mantenimiento mayor</option>
+                <option>Frenos</option>
+                <option>Suspensión</option>
+                <option>Nitrógeno</option>
+                <option>Revisión general</option>
+                <option>Baterías</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="f-sucursal">Sucursal</label>
+              <select id="f-sucursal" name="sucursal">
+                <option value="0">Las Vías</option>
+                <option value="1">Acceso Norte</option>
+                <option value="2">Muñoz</option>
+                <option value="3">Cd. Valles</option>
+                <option value="4">Constitución</option>
+              </select>
+            </div>
+            <div class="paso__acciones">
+              <button class="btn btn--naranja" type="button" id="pasoSiguiente">Continuar</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="paso" data-paso="2" hidden>
+            <legend class="sr">Paso 2: tus datos</legend>
+            <div class="campo">
+              <label for="f-nombre">Nombre</label>
+              <input id="f-nombre" name="nombre" autocomplete="name" required>
+            </div>
+            <div class="campo">
+              <label for="f-tel">Teléfono</label>
+              <input id="f-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required>
+            </div>
+            <div class="campo campo--ancho">
+              <label for="f-correo">Correo electrónico</label>
+              <input id="f-correo" name="correo" type="email" autocomplete="email" required>
+            </div>
+            <fieldset class="campo campo--ancho">
+              <legend>¿Por qué medio nos contactó?</legend>
+              <div class="chips">
+                <label><input type="radio" name="medio" value="Redes sociales" required><span>Redes sociales</span></label>
+                <label><input type="radio" name="medio" value="Google"><span>Google</span></label>
+                <label><input type="radio" name="medio" value="Publicidad exterior"><span>Publicidad exterior</span></label>
+                <label><input type="radio" name="medio" value="Mostrador"><span>Mostrador</span></label>
+                <label><input type="radio" name="medio" value="Recomendado"><span>Recomendado</span></label>
+              </div>
+            </fieldset>
+            <div class="campo campo--ancho">
+              <label for="f-msg">Comentario o mensaje <span class="opcional">(opcional)</span></label>
+              <textarea id="f-msg" name="mensaje" rows="3"></textarea>
+            </div>
+            <div class="paso__acciones">
+              <button class="btn btn--linea" type="button" id="pasoAtras">Atrás</button>
+              <button class="btn btn--naranja" type="submit">Enviar cotización</button>
+            </div>
+            <p class="form__legal">Al enviar aceptas nuestro <a href="https://supremetiresmx.com/privacy-policy/" target="_blank" rel="noopener">aviso de privacidad</a>.</p>
+          </fieldset>
+
+          <p class="form__error" id="formError" role="alert"></p>
+        </form>
+
+        <div class="form__ok" id="formOk" hidden tabindex="-1">
+          <h3>Confirma tu cotización por teléfono</h3>
+          <p id="formOkTxt"></p>
+          <a class="btn btn--naranja" id="formOkTel" href="#">Llamar a la sucursal</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REDES ============ -->
+    <section class="cap redes" data-pose="fin" aria-labelledby="redes-t">
+      <div class="redes__head">
+        <h2 id="redes-t">Síguenos</h2>
+        <p>Promociones, consejos y novedades de nuestras sucursales.</p>
+        <ul class="redes__links">
+          <li><a href="https://www.facebook.com/SupremeTiresMX/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/supremetiresmx/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@supreme_tires_mx" target="_blank" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+      <ul class="redes__galeria">
+        <li><img src="https://supremetiresmx.com/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-11-at-6.15.28-PM-1024x1024.jpeg" alt="Publicación de Supreme Tires MX" loading="lazy"></li>
+        <li><img src="https://supremetiresmx.com/wp-content/uploads/2024/02/Copia-de-MAYOR-VIDA-UTIL.-La-banda-de-rodadura-mas-profunda-aumenta-bastante-la-vida-util-del-neumatico-en-aplicaciones-de-alto-torque.-17-1024x1024.png" alt="Consejo: una banda de rodadura más profunda aumenta la vida útil del neumático" loading="lazy"></li>
+        <li><img src="https://supremetiresmx.com/wp-content/uploads/2023/07/NOTICIA-1.png" alt="Noticia de Supreme Tires MX" loading="lazy"></li>
+        <li><img src="https://supremetiresmx.com/wp-content/uploads/2023/09/SUPREMEASDASD.png" alt="Publicación de Supreme Tires MX" loading="lazy"></li>
+      </ul>
+    </section>
+  </main>
+
+  <nav class="barra" id="barra" aria-label="Acciones rápidas">
+    <a href="tel:+524444113800" id="barraTel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Llamar</a>
+    <a href="#sucursales"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Sucursales</a>
+    <a href="#cotizar" class="barra__cta">Cotizar</a>
+  </nav>
+
+  <footer class="pie">
+    <img src="https://supremetiresmx.com/wp-content/uploads/2026/10/SUPREMACIA-EN-LLANTAS-BLANCO_Mesa-de-trabajo-1.png" alt="#SupremacíaEnLlantas" class="pie__slogan" loading="lazy" width="1005" height="415">
+    <ul class="pie__tels">
+      <li><span>Las Vías</span><a href="tel:+524444113800">444 411 3800</a></li>
+      <li><span>Acceso Norte</span><a href="tel:+524441304500">444 130 4500</a></li>
+      <li><span>Muñoz</span><a href="tel:+524441885471">444 188 5471</a></li>
+      <li><span>Cd. Valles</span><a href="tel:+524811130286">481 113 0286</a></li>
+      <li><span>Constitución</span><a href="tel:+524441225321">444 122 5321</a></li>
+    </ul>
+    <div class="pie__base">
+      <p>© 2026 Supreme Tires MX. Todos los derechos reservados.</p>
+      <a href="https://supremetiresmx.com/privacy-policy/" target="_blank" rel="noopener">Aviso de privacidad</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/tire.js"></script>
+</body>
+</html>
